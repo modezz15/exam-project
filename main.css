@@ -1,0 +1,31 @@
+.capacity{
+    width: 80px;
+    height: 250px;
+    background-color: blue;
+    transform: rotate(180deg);
+}
+.level{
+    height: 250px;
+    width: 80px;
+    background: green;
+}
+.beer_taps{
+    display: block;
+}
+
+#label{
+    width: 50%;
+}
+.beer_tap_name{
+    height: 5vh;
+}
+.beer_taps{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+.inline{
+    width: 15%;
+    height: 50vh;
+}

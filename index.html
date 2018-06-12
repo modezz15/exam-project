@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <title>FooBar</title>
+</head>
+<body>
+    <!--people in queue -->
+    <div id="waiting"></div>
+     <!--serving number-->
+    <div id="serving"></div>
+    <!--served people-->
+    <div id="servedBeer"></div>
+    <!--tap status-->
+    <div class="beer_taps"></div>
+    <!--bartenders-->
+    <div class="bartenders"></div>
+
+    <template class="tapsTemplate">
+        <div class="inline">
+        <div class="beer_tap_name"></div>
+        <div class="capacity">
+        <div class="level"></div>
+        </div>
+        </div>
+    </template>
+<div class="beer_info">
+    
+</div>
+
+    <template class="beerInfo">
+    <h3 id="beerName"></h3>
+    <ul id="description">
+        <li id="aroma"></li>
+        <li id="appearance"></li>
+        <li id="flavor"></li>
+        <li id="mouthFeel"></li>
+        <li id="overallImpression"></li>
+    </ul>
+    <h4 id="category"></h4>
+    <img id="label"></img>
+    <h4 id="alc"></h4>
+    </template>
+    <template class="bartendersTemplate">
+    <ul>
+        <li id="name"></li>
+        <li id="status"></li>
+        <li id="statusDetail"></li>
+        <li id="usingTap"></li>
+        <li id="servingCustomer"></li>
+    </ul>
+    </template>
+     <script src="http://petlatkea.dk/2018/front/foobar.js"></script>
+    <script src="main.js"></script>
+    
+</body>
+</html>
