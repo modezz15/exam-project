@@ -1,7 +1,7 @@
 .capacity{
     width: 80px;
     height: 250px;
-    background-color: blue;
+    background-color:pink;
     transform: rotate(180deg);
 }
 .level{
