@@ -22,13 +22,17 @@ myObject.serving.forEach(customer=>{
  document.querySelector("#waiting").textContent= `Numeber in line: ${myObject.queue.length}`;
  document.querySelector("#serving").textContent= `Serving: ${myObject.serving.length}`;
  document.querySelector("#servedBeer").textContent = `Served beers: ${beersServed}`;
+ document.querySelector("#barName").textContent = `Bar name: ${myObject.bar.name}`;
+ document.querySelector("#closingTime").textContent = `Bar closing time: ${myObject.bar.closingTime}`;
  
  document.querySelector(".beer_taps").innerHTML="";
  document.querySelector(".beer_info").innerHTML="";
  document.querySelector(".bartenders").innerHTML="";
+ document.querySelector(".storage").innerHTML="";
 showTaps();
 showBeerInfo();
 showBartenders();
+showStorage();
 }
 function showTaps(){
     console.log("taps",myObject.taps)
@@ -90,7 +94,28 @@ function showBartenders(){
         clone.querySelector("#statusDetail").textContent = infoBartender.statusDetail;
         clone.querySelector("#usingTap").textContent = infoBartender.usingTap;
         clone.querySelector("#servingCustomer").textContent = infoBartender.servingCustomer;
+
         document.querySelector(".bartenders").appendChild(clone);
     })
 
 }
+function showStorage(){
+    console.log("storageInfo", myObject.storage);
+    let storageInfo = myObject.storage;
+    storageInfo.forEach(infoStorage =>{
+        let storageTemplate = document.querySelector(".storageTemplate").content;
+        let clone = storageTemplate.cloneNode(true);
+        clone.querySelector("#storageName").textContent = infoStorage.name;
+        clone.querySelector("#storageAmount").textContent = infoStorage.amount;
+        document.querySelector(".storage").appendChild(clone);
+    })
+}
+
+const storage = document.querySelector("#storageAmount");
+const n = infoStorage.amount;
+
+for(let i=0; i<n; i++){
+    const div = document.createElement("div");
+storage.appendChild(div);
+}
+document.body.appendChild(storage);
