@@ -19,16 +19,16 @@ myObject.serving.forEach(customer=>{
 
 
 
- document.querySelector("#waiting").textContent= `Numeber in line: ${myObject.queue.length}`;
- document.querySelector("#serving").textContent= `Serving: ${myObject.serving.length}`;
- document.querySelector("#servedBeer").textContent = `Served beers: ${beersServed}`;
- document.querySelector("#barName").textContent = `Bar name: ${myObject.bar.name}`;
- document.querySelector("#closingTime").textContent = `Bar closing time: ${myObject.bar.closingTime}`;
+ document.querySelector("#waiting").textContent= `${myObject.queue.length}`;
+ document.querySelector("#serving").textContent= `${myObject.serving.length}`;
+ document.querySelector("#servedBeer").textContent = `${beersServed}`;
+ document.querySelector("#barName").textContent = `${myObject.bar.name}`;
+ document.querySelector("#closingTime").textContent = `${myObject.bar.closingTime}`;
  
  document.querySelector(".beer_taps").innerHTML="";
  document.querySelector(".beer_info").innerHTML="";
  document.querySelector(".bartenders").innerHTML="";
- document.querySelector(".storage").innerHTML="";
+ document.querySelector(".storage").innerHTML = "";
 showTaps();
 showBeerInfo();
 showBartenders();
@@ -48,14 +48,15 @@ function showTaps(){
     let clone = tapsTemplate.cloneNode(true);
     
         //getting the value of level, which is equal to the height of the level
+        let levelHeight = clone.querySelector(".level");
         clone.querySelector(".level").style.height = `${tap.level/10}px`;
         //getting the name of the beer tap
         clone.querySelector(".beer_tap_name").textContent = tap.beer;
         
         if(tap.level < 1250){
-            clone.querySelector(".level").style.backgroundColor = 'yellow';
+            clone.querySelector(".level").style.background = 'yellow';
         } if(tap.level < 500){
-            clone.querySelector(".level").style.backgroundColor = 'red';
+            clone.querySelector(".level").style.background = 'red';
         }
         //append clone in the div
         document.querySelector(".beer_taps").appendChild(clone);
@@ -74,9 +75,9 @@ function showTaps(){
     clone.querySelector("#flavor").textContent = infoBeer.description.flavor;
     clone.querySelector("#mouthFeel").textContent = infoBeer.description.mouthfeel;
     clone.querySelector("#overallImpression").textContent = infoBeer.description.overallImpression;
-    clone.querySelector("#category").textContent = infoBeer.category;
+    clone.querySelector("#category").textContent = `Type: ` + infoBeer.category;
     clone.querySelector("#label").innerHTML = infoBeer.label;
-    clone.querySelector("#alc").textContent = infoBeer.alc;
+    clone.querySelector("#alc").textContent = `alc: ` + infoBeer.alc;
     clone.querySelector("#label").src = infoBeer.label;
 
 
@@ -90,9 +91,9 @@ function showBartenders(){
         let bartendersTemplate = document.querySelector(".bartendersTemplate").content;
         let clone = bartendersTemplate.cloneNode(true);
         clone.querySelector("#name").textContent = infoBartender.name;
-        clone.querySelector("#status").textContent = infoBartender.status;
-        clone.querySelector("#statusDetail").textContent = infoBartender.statusDetail;
-        clone.querySelector("#usingTap").textContent = infoBartender.usingTap;
+        clone.querySelector("#status").textContent = `Status` + `: ` + infoBartender.status;
+        clone.querySelector("#statusDetail").textContent = `Work status` + `: ` + infoBartender.statusDetail;
+        clone.querySelector("#usingTap").textContent = `Tap being used` + `: ` + infoBartender.usingTap;
         clone.querySelector("#servingCustomer").textContent = infoBartender.servingCustomer;
 
         document.querySelector(".bartenders").appendChild(clone);
@@ -102,20 +103,26 @@ function showBartenders(){
 function showStorage(){
     console.log("storageInfo", myObject.storage);
     let storageInfo = myObject.storage;
+    document.querySelector("#storageContainer").innerHTML = "";
     storageInfo.forEach(infoStorage =>{
         let storageTemplate = document.querySelector(".storageTemplate").content;
         let clone = storageTemplate.cloneNode(true);
         clone.querySelector("#storageName").textContent = infoStorage.name;
-        clone.querySelector("#storageAmount").textContent = infoStorage.amount;
-        document.querySelector(".storage").appendChild(clone);
+        // clone.querySelector("#storageAmount").style.width = 10 * infoStorage.amount + "%";
+        let storage = clone.querySelector("#storageAmount");
+
+        let n = infoStorage.amount;
+
+       for(let i=0; i<n; i++){
+          let div = document.createElement("div");
+          storage.appendChild(div);
+       }
+     //    document.body.appendChild(storage);
+        document.querySelector("#storageContainer").appendChild(clone);
+        
     })
+    
 }
+   
 
-const storage = document.querySelector("#storageAmount");
-const n = infoStorage.amount;
-
-for(let i=0; i<n; i++){
-    const div = document.createElement("div");
-storage.appendChild(div);
-}
-document.body.appendChild(storage);
+    

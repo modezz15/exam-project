@@ -9,33 +9,58 @@
     <title>FooBar</title>
 </head>
 <body>
-    <!--people in queue -->
-    <h1>amount of people in queue</h1>
-    <div id="waiting"></div>
-    <!--serving number-->
-    <h1>amount of people being served</h1>
-    <div id="serving"></div>
-    <!--served people-->
-    <h1>Amount of beer served</h1>
-    <div id="servedBeer"></div>
-    <!--tap status-->
-    <h1>status</h1>
-    <div class="beer_taps"></div>
-    <!--bartenders-->
-    <h1>bartenders</h1>
-    <div class="bartenders"></div>
-    <!--storage-->
-    <h1>storage</h1>
-    <div class="storage">
+    <div id="header">
+    <div id="logo"></div>
     </div>
-    <!--beer info-->
-    <h1>Information about beer</h1>
-    <div class="beer_info"></div>
-    <!--bar name-->
-    <div id="barName"></div>
-    <!--serving number-->
-   <div id="closingTime"></div>
+    <div id="sideNav">
+    <a href="#overallWrapper" id="overallLink">Overall</a>
+    <a href="#beerInfoWrapper" id="beerLink">Beer Info</a>
+    <a href="#barInfoWrapper" id="barLink">Bar Info</a>
+    <a href="#bartenderInfoWrapper" id="bartenderLink">Bartender Info</a>
+    <h1 id="dashboardHeader">Foobar dashboard</h1>
+    </div>
+    <div id="overallWrapper" class="wrapper">
+            <div id="overallInfoStats">
+            <div id="queueContainer" class="statsContainer">
+                    <h3>Queue lenght</h3>
+                    <div id="waiting"></div>
+            </div>
+            <div id="servingContainer" class="statsContainer">
+                    <h3>People being served</h3>
+                    <div id="serving"></div>   
+            </div>
+            <div id="beerServedContainer" class="statsContainer">
+                    <h3>Total beer served</h3>
+                    <div id="servedBeer"></div>
+            </div>
+            </div>
+            <div id="beerStatusContainer">
+                    <h1>Kegs capasity status</h1>
+                    <div class="beer_taps"></div>
+            </div>
+            
+    </div>
+    <div id="beerInfoWrapper" class="wrapper">
+            <h1>Beer description</h1>
+            <div class="beer_info"></div>
+    </div>
+    <div id="barInfoWrapper" class="wrapper">
+            <h1>Bar details</h1>
+            <div id="barName"></div>
+            <div id="closingTime"></div>
+            <h1>Storage</h1>
+            <div class="storage">
+            </div>
+            <div id="storageContainer"></div>
+    </div>
+    <div id="bartenderInfoWrapper" class="wrapper">
+            <h1>Bartenders</h1>
+            <div class="bartenders"></div>
+    </div>
 
+
+
+    ///////
     <template class="tapsTemplate">
         <div class="inline">
         <div class="beer_tap_name"></div>
@@ -46,33 +71,38 @@
     </template>
 
     <template class="beerInfo">
+    <div class="beerInfoContainer">
+    <div id="labelContainer">
+        <img id="label"></img>
+    </div>
     <h3 id="beerName"></h3>
-    <ul id="description">
-        <li id="aroma"></li>
-        <li id="appearance"></li>
-        <li id="flavor"></li>
-        <li id="mouthFeel"></li>
-        <li id="overallImpression"></li>
-    </ul>
     <h4 id="category"></h4>
-    <img id="label"></img>
     <h4 id="alc"></h4>
+    <button id="modalButton">Read more</button>
+    <div id="description">
+        <p id="aroma"></p>
+        <p id="appearance"></p>
+        <p id="flavor"></p>
+        <p id="mouthFeel"></p>
+        <p id="overallImpression"></p>
+    </div>
+    </div>
     </template>
     <template class="bartendersTemplate">
-    <ul>
-        <li id="name"></li>
-        <li id="status"></li>
-        <li id="statusDetail"></li>
-        <li id="usingTap"></li>
-        <li id="servingCustomer"></li>
-    </ul>
+        <div id="bartendersContainer">
+        <div id="nameContainer">
+             <p id="name"></p>
+        </div>
+        <p id="status"></p>
+        <p id="statusDetail"></p>
+        <p id="usingTap"></p>
+        <p id="servingCustomer"></p>
+    </div>
     </template>
     <template class="storageTemplate">
-        <ul>
-            <li id="storageName"></li>
+            <h2 id="storageName"></h2>
             <div id="storageAmount">
             </div>
-        </ul>
     </template>
      <script src="http://petlatkea.dk/2018/front/foobar.js"></script>
     <script src="mainn.js"></script>

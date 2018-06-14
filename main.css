@@ -1,23 +1,155 @@
 *{
     font-family: 'Oleo Script Swash Caps', cursive;
+    margin: 0;
+    color:white;
+}
+body{
+    overflow: hidden;
+    background: rgb(24, 24, 24);
+}
+#header{
+    height: 30vh;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    width: 20%;
+    z-index: 999;
+    background: rgb(46, 46, 46);
+}
+#logo{
+    width: 100%;
+    height: 100%;
+    background-image: url(logo.png);
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#dashboardHeader{
+   text-align: center;
+   position: relative;
+   top: 45vh;
+    
+}
+#sideNav{
+position: fixed;
+z-index: 998;
+width: 20%;
+background-color: rgb(68, 68, 68);
+height: 100vh;
+box-shadow: 0px 0px 2px 2px rgba(0,0,0,.5);
+display: flex;
+flex-direction: column;
+overflow: hidden;
+}
+#sideNav a{
+    position: relative;
+    top: 30vh;
+    text-decoration: none;
+    padding: 2.5vh 30px;
+    width: 100%;
+    border-bottom: 5px dotted white;
+    font-size: 24px;
+    
+}
+.wrapper{
+    width: 80%;
+    position: relative;
+    left: 20%;
+    top: 0;
+    height: 100vh;
+}
+.wrapper h1{
+    margin-top: 9vh;
+}
+#overallInfoStats{
+    height: 30vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.statsContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid black 2px;
 }
 .capacity{
     width: 80px;
     height: 250px;
     background-color:pink;
     transform: rotate(180deg);
+    
 }
 .level{
     height: 250px;
     width: 80px;
     background: green;
+    transition: all 5s;
 }
-.beer_taps{
-    display: block;
+#beerInfoWrapper{
+overflow-y: scroll;
+display: flex;
+flex-direction: column;
+align-items: center;
 }
-
+#beerInfoWrapper h1{
+    text-align: center;
+}
+.beer_info{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+    width: 80%;
+    padding: 5vh 0;
+}
+.beerInfoContainer{
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(46, 46, 46);
+    box-shadow: 2px 2px 7px 0px rgba(0,0,0,.5);
+    border: solid white 2px;
+}
+#beerName{
+    
+}
+#labelContainer{
+margin-top: 2vh;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 100%;
+overflow: hidden;
+width: 25vh;
+height: 25vh;
+box-shadow: 2px 2px 7px 1px rgba(0,0,0,.4);
+}
 #label{
-    width: 50%;
+    width: auto;
+    height: 30vh;
+}
+#modalButton{
+    width: 100%;
+    background: rgb(29, 29, 29);
+    border: none;
+    padding: 2vh 0;
+    color: white;
+    cursor: pointer;
+    border-top: solid white 2px;
+}
+#description{
+    display: none;
+}
+#beerStatusContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#beerStatusContainer h1{
+    margin-bottom: 20px;
 }
 .beer_tap_name{
     height: 5vh;
@@ -25,19 +157,68 @@
 .beer_taps{
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 80%;
     justify-content: center;
 }
 .inline{
     width: 15%;
     height: 50vh;
 }
+#barInfoWrapper{
+overflow-y: scroll;
+height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+#barInfoWrapper h1,h2{
+    text-align: center;
+}
+
 #storageAmount{
-    border: 2px black solid;
+    background: transparent;
     height: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 #storageAmount div{
     background: red;
-    height: 20px;
-    width: 20px;
+    height: 40px;
+    width: 40px;
+    margin-right: 5px;
+}
+#storageContainer{
+    
+}
+#bartenderInfoWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bartenders{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 80%;
+    grid-gap: 20px;
+}
+#bartenderInfoWrapper h1{
+    text-align: center;
+}
+#bartendersContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: black 2px solid;
+    margin-top: 10vh;
+}
+#nameContainer{
+    border-radius: 100%;
+    border: black 1px solid;
+    margin-top: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15vh;
+    width: 15vh;
 }
