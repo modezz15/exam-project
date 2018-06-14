@@ -3,8 +3,9 @@ let beersServed = 0;
 let lastIdCounted = 0;
 document.addEventListener("DOMContentLoaded",getData);
 setInterval(()=>{
-    getData();
+    getData();  
 }, 3000);
+
 async function getData() {
 let data = FooBar.getData();
 myObject= JSON.parse(data);
@@ -48,7 +49,6 @@ function showTaps(){
     let clone = tapsTemplate.cloneNode(true);
     
         //getting the value of level, which is equal to the height of the level
-        let levelHeight = clone.querySelector(".level");
         clone.querySelector(".level").style.height = `${tap.level/10}px`;
         //getting the name of the beer tap
         clone.querySelector(".beer_tap_name").textContent = tap.beer;
