@@ -1,11 +1,12 @@
 *{
-    font-family: 'Oleo Script Swash Caps', cursive;
+    
     margin: 0;
     color:white;
 }
+
 body{
     overflow: hidden;
-    background: rgb(24, 24, 24);
+    background: #333333;
 }
 #header{
     height: 30vh;
@@ -14,7 +15,7 @@ body{
     align-items: center;
     width: 20%;
     z-index: 999;
-    background: rgb(46, 46, 46);
+    background: #212121;
 }
 #logo{
     width: 100%;
@@ -28,6 +29,7 @@ body{
    text-align: center;
    position: relative;
    top: 45vh;
+   font-size: 1.6em;
     
 }
 #sideNav{
@@ -40,6 +42,7 @@ box-shadow: 0px 0px 2px 2px rgba(0,0,0,.5);
 display: flex;
 flex-direction: column;
 overflow: hidden;
+font-family: 'Oleo Script Swash Caps', cursive;
 }
 #sideNav a{
     position: relative;
@@ -71,19 +74,20 @@ overflow: hidden;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: solid black 2px;
+    border: solid #212121 1px;
+    box-shadow: 0px 0px 4px 4px rgba(0,0,0,.5);
 }
 .capacity{
     width: 80px;
     height: 250px;
-    background-color:pink;
+    background-color: rgb(68, 68, 68);
     transform: rotate(180deg);
     
 }
 .level{
     height: 250px;
     width: 80px;
-    background: green;
+    background:#13937f ;
     transition: all 5s;
 }
 #beerInfoWrapper{
@@ -108,9 +112,9 @@ align-items: center;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background: rgb(46, 46, 46);
-    box-shadow: 2px 2px 7px 0px rgba(0,0,0,.5);
-    border: solid white 2px;
+    background: #212121;
+    box-shadow: 2px 2px 10px 7px rgba(0,0,0,.5);
+    border: solid grey 2px;
 }
 #beerName{
     
@@ -125,6 +129,7 @@ overflow: hidden;
 width: 25vh;
 height: 25vh;
 box-shadow: 2px 2px 7px 1px rgba(0,0,0,.4);
+border:  5px dotted white;
 }
 #label{
     width: auto;
@@ -132,27 +137,33 @@ box-shadow: 2px 2px 7px 1px rgba(0,0,0,.4);
 }
 #modalButton{
     width: 100%;
-    background: rgb(29, 29, 29);
+    background: rgb(46, 46, 46);
+    font-size: 1.5em;
     border: none;
     padding: 2vh 0;
     color: white;
     cursor: pointer;
-    border-top: solid white 2px;
+    border-top: solid grey 2px;
 }
 #description{
     display: none;
+   
 }
 #beerStatusContainer{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 #beerStatusContainer h1{
     margin-bottom: 20px;
 }
 .beer_tap_name{
     height: 5vh;
+    margin-right: 1em;
+    margin-top:1em;
+    transform: rotate(-30deg);
 }
 .beer_taps{
     display: flex;
@@ -201,6 +212,9 @@ align-items: center;
     grid-template-columns: repeat(3, 1fr);
     width: 80%;
     grid-gap: 20px;
+    font-size: 1.2em;
+    
+    
 }
 #bartenderInfoWrapper h1{
     text-align: center;
@@ -209,7 +223,9 @@ align-items: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: black 2px solid;
+    background: #212121;
+    box-shadow: 2px 2px 10px 7px rgba(0,0,0,.5);
+    border: solid grey 2px;
     margin-top: 10vh;
 }
 #nameContainer{
@@ -221,4 +237,8 @@ align-items: center;
     justify-content: center;
     height: 15vh;
     width: 15vh;
+    margin: 1em;
+}
+#name{
+    font-size: 1.5em;
 }
