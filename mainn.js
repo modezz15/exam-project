@@ -23,8 +23,9 @@ myObject.serving.forEach(customer=>{
  document.querySelector("#waiting").textContent= `${myObject.queue.length}`;
  document.querySelector("#serving").textContent= `${myObject.serving.length}`;
  document.querySelector("#servedBeer").textContent = `${beersServed}`;
- document.querySelector("#barName").textContent = `${myObject.bar.name}`;
- document.querySelector("#closingTime").textContent = `${myObject.bar.closingTime}`;
+ document.querySelector("#barName").textContent = `Name: ${myObject.bar.name}`;
+ document.querySelector("#closingTime").textContent = `Closing time: ${myObject.bar.closingTime}`;
+ 
  
  document.querySelector(".beer_taps").innerHTML="";
  document.querySelector(".beer_info").innerHTML="";
@@ -35,6 +36,7 @@ showBeerInfo();
 showBartenders();
 showStorage();
 }
+
 function showTaps(){
     console.log("taps",myObject.taps)
 
@@ -54,9 +56,9 @@ function showTaps(){
         clone.querySelector(".beer_tap_name").textContent = tap.beer;
         
         if(tap.level < 1250){
-            clone.querySelector(".level").style.background = 'yellow';
+            clone.querySelector(".level").style.background = '#f1b65c';
         } if(tap.level < 500){
-            clone.querySelector(".level").style.background = 'red';
+            clone.querySelector(".level").style.background = '#b73d52';
         }
         //append clone in the div
         document.querySelector(".beer_taps").appendChild(clone);
@@ -68,6 +70,7 @@ function showTaps(){
     let beerInfo = myObject.beertypes;
     beerInfo.forEach(infoBeer =>{
     let beerInfoTemplate = document.querySelector(".beerInfo").content;
+    
     let clone = beerInfoTemplate.cloneNode(true);
     clone.querySelector("#beerName").textContent = infoBeer.name;
     clone.querySelector("#aroma").textContent = infoBeer.description.aroma;
@@ -77,8 +80,12 @@ function showTaps(){
     clone.querySelector("#overallImpression").textContent = infoBeer.description.overallImpression;
     clone.querySelector("#category").textContent = `Type: ` + infoBeer.category;
     clone.querySelector("#label").innerHTML = infoBeer.label;
-    clone.querySelector("#alc").textContent = `alc: ` + infoBeer.alc;
+    clone.querySelector("#alc").textContent = `alc: ` + infoBeer.alc + ` %`;
     clone.querySelector("#label").src = infoBeer.label;
+   /*  clone.querySelector("#modalButton").addEventListener("click", ()=>{
+        let description = document.("#description");
+        description.textContent =  
+    })*/
 
 
     document.querySelector(".beer_info").appendChild(clone);
@@ -95,6 +102,11 @@ function showBartenders(){
         clone.querySelector("#statusDetail").textContent = `Work status` + `: ` + infoBartender.statusDetail;
         clone.querySelector("#usingTap").textContent = `Tap being used` + `: ` + infoBartender.usingTap;
         clone.querySelector("#servingCustomer").textContent = infoBartender.servingCustomer;
+        if(infoBartender.status == "READY"){
+            clone.querySelector("#nameContainer").style.background = '#f1b65c';
+        } if(infoBartender.status == "WORKING"){
+            clone.querySelector("#nameContainer").style.background = '#13937f';
+        }
 
         document.querySelector(".bartenders").appendChild(clone);
     })
