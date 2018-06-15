@@ -104,17 +104,9 @@ function showTaps(){
     clone.querySelector("#label").innerHTML = infoBeer.label;
     clone.querySelector("#alc").textContent = `alc: ` + infoBeer.alc + ` %`;
     clone.querySelector("#label").src = infoBeer.label;
-<<<<<<< HEAD
-    clone.querySelector("#modalButton").addEventListener("click", ()=>{
-        clone.querySelector("#description") = infoBeer.description;
-        let description = infoBeer.description;
-        description.style.display = "block";
-    })
-=======
-   // clone.querySelector("#modalButton").addEventListener("click", ()=>{
-   // document.querySelector("#description").style.height = "30vh";  
-  //  });
->>>>>>> 1eaa689dac22a6fb6df8abc1b50271bd65084cb6
+
+    
+
 
 
     document.querySelector(".beer_info").appendChild(clone);
@@ -130,7 +122,11 @@ function showBartenders(){
         clone.querySelector("#status").textContent = `Status` + `: ` + infoBartender.status;
         clone.querySelector("#statusDetail").textContent = `Work status` + `: ` + infoBartender.statusDetail;
         clone.querySelector("#usingTap").textContent = `Tap being used` + `: ` + infoBartender.usingTap;
-        clone.querySelector("#servingCustomer").textContent = infoBartender.servingCustomer;
+        if(infoBartender.status == "READY"){
+            clone.querySelector("#nameContainer").style.background = '#f1b65c';
+        } if(infoBartender.status == "WORKING"){
+            clone.querySelector("#nameContainer").style.background = '#13937f';
+        }
 
         document.querySelector(".bartenders").appendChild(clone);
     })
