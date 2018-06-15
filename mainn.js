@@ -82,10 +82,11 @@ function showTaps(){
     clone.querySelector("#label").innerHTML = infoBeer.label;
     clone.querySelector("#alc").textContent = `alc: ` + infoBeer.alc + ` %`;
     clone.querySelector("#label").src = infoBeer.label;
-   /*  clone.querySelector("#modalButton").addEventListener("click", ()=>{
-        let description = document.("#description");
-        description.textContent =  
-    })*/
+    clone.querySelector("#modalButton").addEventListener("click", ()=>{
+        clone.querySelector("#description") = infoBeer.description;
+        let description = infoBeer.description;
+        description.style.display = "block";
+    })
 
 
     document.querySelector(".beer_info").appendChild(clone);
@@ -102,11 +103,6 @@ function showBartenders(){
         clone.querySelector("#statusDetail").textContent = `Work status` + `: ` + infoBartender.statusDetail;
         clone.querySelector("#usingTap").textContent = `Tap being used` + `: ` + infoBartender.usingTap;
         clone.querySelector("#servingCustomer").textContent = infoBartender.servingCustomer;
-        if(infoBartender.status == "READY"){
-            clone.querySelector("#nameContainer").style.background = '#f1b65c';
-        } if(infoBartender.status == "WORKING"){
-            clone.querySelector("#nameContainer").style.background = '#13937f';
-        }
 
         document.querySelector(".bartenders").appendChild(clone);
     })
